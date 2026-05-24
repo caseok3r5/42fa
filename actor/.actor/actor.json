@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "name": "practitioner-network-scraper",
+  "title": "Practitioner Network Scraper",
+  "description": "Custom Instagram network scraper for practitioner sourcing. Outputs profile-like records consumed by the review dashboard.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile"
+}

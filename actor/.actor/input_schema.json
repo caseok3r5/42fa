@@ -1,0 +1,49 @@
+{
+  "title": "Practitioner Network Scraper Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "sourceProfile": {
+      "title": "Source profile",
+      "type": "string",
+      "description": "Instagram handle to use as the source network.",
+      "editor": "textfield",
+      "prefill": "brooklynyogaproject"
+    },
+    "type": {
+      "title": "Network type",
+      "type": "string",
+      "description": "Which network side to collect.",
+      "editor": "select",
+      "default": "following",
+      "enum": ["followers", "following"],
+      "enumTitles": ["Followers", "Following"]
+    },
+    "limit": {
+      "title": "Result limit",
+      "type": "integer",
+      "description": "Maximum number of profiles to emit.",
+      "editor": "number",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "seedProfiles": {
+      "title": "Seed profiles",
+      "type": "array",
+      "description": "Optional handles to scrape directly while custom follower/following collection is being developed or tested.",
+      "editor": "stringList",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sessionCookie": {
+      "title": "Session cookie",
+      "type": "string",
+      "description": "Optional Instagram cookie string for accounts you are authorized to access. Store as a secret in Apify.",
+      "editor": "textarea",
+      "isSecret": true
+    }
+  },
+  "required": ["sourceProfile", "type", "limit"]
+}
