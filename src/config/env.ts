@@ -1,12 +1,15 @@
 import { z } from "zod";
 
+const optionalUrl = z.preprocess((value) => (value === "" ? undefined : value), z.string().url().optional());
+const optionalString = z.preprocess((value) => (value === "" ? undefined : value), z.string().optional());
+
 const envSchema = z.object({
-  APIFY_TOKEN: z.string().optional(),
-  APIFY_ACTOR_ID: z.string().optional(),
-  SUPABASE_URL: z.string().url().optional(),
-  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
-  NEXT_PUBLIC_SUPABASE_URL: z.string().url().optional(),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().optional()
+  APIFY_TOKEN: optionalString,
+  APIFY_ACTOR_ID: optionalString,
+  SUPABASE_URL: optionalUrl,
+  SUPABASE_SERVICE_ROLE_KEY: optionalString,
+  NEXT_PUBLIC_SUPABASE_URL: optionalUrl,
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: optionalString
 });
 
 export const env = envSchema.parse(process.env);
