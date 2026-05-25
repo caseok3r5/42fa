@@ -52,7 +52,7 @@ Then in Apify:
 1. Create a new Actor.
 2. Choose **Link Git repository**.
 3. Select the new GitHub repo.
-4. Set the Actor source directory to `actor`.
+4. Set the Actor source directory to the repo root, or to `actor`. The repo root now includes an Apify wrapper that runs the custom scraper.
 5. Build the Actor.
 6. Copy its Actor ID into `.env.local` as `APIFY_ACTOR_ID`.
 

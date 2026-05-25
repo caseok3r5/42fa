@@ -26,7 +26,7 @@ It is intentionally shaped for the sourcing dashboard in the parent project. Eac
 2. In Apify Console, create a new Actor.
 3. Choose **Link Git repository**.
 4. Select this repository.
-5. Set the Actor source directory to `actor`.
+5. Set the Actor source directory to the repo root, or to `actor`. The repo root includes an Apify wrapper that runs this folder.
 6. Build and run the Actor.
 7. Copy the Actor ID into the app as `APIFY_ACTOR_ID`.
 
