@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_URL="https://github.com/caseok3r5/iakje.git"
+REPO_URL="https://github.com/caseok3r5/42fa.git"
 
 cd "$(dirname "$0")/.."
 
