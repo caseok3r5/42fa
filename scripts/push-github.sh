@@ -12,6 +12,8 @@ GITHUB_USER="${GITHUB_USER:-caseok3r5}"
 printf "Paste GitHub token for %s: " "$GITHUB_USER"
 read -rs GITHUB_TOKEN
 printf "\n"
+export GITHUB_USER
+export GITHUB_TOKEN
 
 ASKPASS_FILE="$(mktemp)"
 trap 'rm -f "$ASKPASS_FILE"; unset GITHUB_TOKEN GITHUB_USER' EXIT
